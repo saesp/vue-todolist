@@ -9,12 +9,14 @@
 <body>
     
     <div id="app">
-        <input type="text" placeholder="Aggiungi task" v-model="newTasks">
+        <input type="text" placeholder="Aggiungi task" v-model="newTask">
         <button @click="clickButton">Add</button>
+        <div v-if="error">Errore, devi aggiunger tasks con più di 2 lettere</div>
 
         <ul>
             <li  v-for="task in tasks">
-                {{task.text}} {{task.done}}
+                {{task.text}}
+                <span>X</span>
             </li>
             
         </ul>

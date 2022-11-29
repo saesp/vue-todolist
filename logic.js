@@ -7,6 +7,7 @@ const {createApp} = Vue;
 createApp({
     data() {
         return {
+            error: false,
             // array tasks gia presenti in lista
             tasks: [
                 {text: 'Completare il progetto', done: false}, 
@@ -15,15 +16,24 @@ createApp({
             ],
 
             // array task da aggiungere, il valore di input deve amdare qui
-            newTasks: [""],
+            newTask: "",
 
         }
     },
 
     methods: {
+        
         // far andare il value in newTasks quando user clicca button
         clickButton (){
-            this.tasks.push(this.newTasks)
+            if(this.newTask.length <= 2 || this.newTask.length === " "){
+                this.error = true;
+            } else{
+                this.tasks.push({text: this.newTask, done: false});
+                this.error = false;
+
+            }
+            
         }
     }
 }).mount('#app')
+
