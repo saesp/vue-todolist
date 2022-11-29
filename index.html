@@ -4,30 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <h1>To Do List</h1>
+    </header>
+
+    <main>
+        <div id="app">
+            <div class="container-todo">
+                <div class="cont-add">
+                    <input type="text" placeholder="Add task" v-model="newTask" @KeyUp.enter="clickButton">
+                    <button @click="clickButton">Add</button>
+                    <div id="error" v-if="error">Devi aggiungere parole con più di 2 lettere</div>
+                </div>
+                
+                
+        
+                <ul>
+                    <li  v-for="(task, index) in tasks">
+                        <span class="li-text">{{task.text}}</span>
+
+                        <div class="icons">
+                            <span class="completed did" v-if="did" @click="didTask(task, index)"><i class="fa-solid fa-circle-check"></i></span>
+                            <span class="completed not-did" v-else @click="didTask(task, index)"><i class="fa-solid fa-circle-xmark"></i></span>
+                            
+                            <span class="delete" @click="deleteTask(index)"><i class="fa-solid fa-trash"></i></span>
+                        </div>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
     
-    <div id="app">
-        <input type="text" placeholder="Aggiungi task" v-model="newTask">
-        <button @click="clickButton">Add</button>
-        <div v-if="error">Errore, devi aggiunger tasks con più di 2 lettere</div>
-
-        <ul>
-            <li  v-for="(task, index) in tasks">
-                {{task.text}}
-                <span @click="deleteTask(index)">X</span>
-            </li>
-            
-        </ul>
-
-
-
-
-
-
-    </div>
-
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="logic.js"></script>
 </body>

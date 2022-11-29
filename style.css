@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(0, 82, 78);
+    font-size: 18px;
+    color: white;
+}
+
+header{
+    text-align: center;
+}
+h1{
+    color: white;
+    margin: 20px auto 40px;
+    font-size: 50px;
+}
+/* #app{
+    display: table;
+    margin: auto;
+} */
+.container-todo{
+    width: 80vh;
+    margin: auto;
+}
+.cont-add{
+    text-align: center;
+    margin-bottom: 20px;
+}
+input{
+    margin-right: 5px;
+    width: 70%;
+    padding: 5px 8px;
+    border-radius: 100px;
+    margin-bottom: 8px;
+}
+button{
+    margin-left: 5px;
+    width: 15%;
+    padding: 5px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+button:hover{
+    opacity: 0.7;
+}
+ul li{
+    margin-bottom: 10px;
+    padding: 5px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+#error{
+    font-size: 14px;
+    color: black;
+}
+ul span{
+    /* margin: auto 10px; */
+}
+
+.li-text{
+    width: 60%;
+}
+
+.did{
+    color: green;
+}
+.not-did{
+    color: red;
+}
+
+.not-done:hover{
+    opacity: 0.7;
+}
+.completed{
+    cursor: pointer;
+    margin-right: 15px;
+}
+.delete{
+    cursor: pointer;
+}
+
+.delete:hover{
+    color: red;
+}

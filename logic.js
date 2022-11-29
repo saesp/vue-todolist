@@ -9,15 +9,12 @@ createApp({
         return {
             error: false,
             // array tasks gia presenti in lista
-            tasks: [
-                {text: 'Completare il progetto', done: false}, 
-                {text: 'Fare la spesa', done: true}, 
-                {text: 'Fare il bucato', done: false}
-            ],
+            tasks: [],
 
             // array task da aggiungere, il valore di input deve amdare qui
             newTask: "",
 
+            did: false,
         }
     },
 
@@ -31,11 +28,23 @@ createApp({
                 this.tasks.unshift({text: this.newTask, done: false});
                 this.error = false;
             }
+            this.newTask= "";
         },
 
-        // se clicco x vicino una task questa deve andar via
+        // se clicco delete vicino a una task questa deve andar via
         deleteTask (index){
             this.tasks.splice(index, 1);
+        },
+
+        // se clicco did deve diventare not did e viceversa
+        didTask (task, index){
+            if(task.done === false){
+                task.done = true;
+                this.did = false;
+            } else {
+                task.done = false;
+                this.did = true;
+            }
         }
     }
 }).mount('#app')
