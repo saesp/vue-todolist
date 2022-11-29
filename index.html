@@ -14,9 +14,9 @@
         <div v-if="error">Errore, devi aggiunger tasks con più di 2 lettere</div>
 
         <ul>
-            <li  v-for="task in tasks">
+            <li  v-for="(task, index) in tasks">
                 {{task.text}}
-                <span>X</span>
+                <span @click="deleteTask(index)">X</span>
             </li>
             
         </ul>

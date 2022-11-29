@@ -28,11 +28,14 @@ createApp({
             if(this.newTask.length <= 2 || this.newTask.length === " "){
                 this.error = true;
             } else{
-                this.tasks.push({text: this.newTask, done: false});
+                this.tasks.unshift({text: this.newTask, done: false});
                 this.error = false;
-
             }
-            
+        },
+
+        // se clicco x vicino una task questa deve andar via
+        deleteTask (index){
+            this.tasks.splice(index, 1);
         }
     }
 }).mount('#app')
