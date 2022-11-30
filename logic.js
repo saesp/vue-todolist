@@ -14,7 +14,7 @@ createApp({
             // array task da aggiungere, il valore di input deve amdare qui
             newTask: "",
 
-            did: false,
+            // did: false,
         }
     },
 
@@ -40,10 +40,10 @@ createApp({
         didTask (task, index){
             if(task.done === false){
                 task.done = true;
-                this.did = false;
+                document.querySelector("span.li-text").classList.add("line-text");
             } else {
                 task.done = false;
-                this.did = true;
+                document.querySelector("span.li-text").classList.remove("line-text");
             }
         }
     }

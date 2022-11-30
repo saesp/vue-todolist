@@ -87,3 +87,7 @@ ul span{
 .delete:hover{
     color: red;
 }
+
+.line-text{
+    text-decoration: line-through;
+}

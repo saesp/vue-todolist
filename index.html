@@ -30,8 +30,9 @@
                         <span class="li-text">{{task.text}}</span>
 
                         <div class="icons">
-                            <span class="completed did" v-if="did" @click="didTask(task, index)"><i class="fa-solid fa-circle-check"></i></span>
-                            <span class="completed not-did" v-else @click="didTask(task, index)"><i class="fa-solid fa-circle-xmark"></i></span>
+                            <span class="completed not-did" v-if="task.done === false" @click="didTask(task, index)"><i class="fa-solid fa-circle-xmark"></i></span>
+                            <span class="completed did" v-else="task.done" @click="didTask(task, index)"> <i class="fa-solid fa-circle-check"></i></span>
+                            
                             
                             <span class="delete" @click="deleteTask(index)"><i class="fa-solid fa-trash"></i></span>
                         </div>
