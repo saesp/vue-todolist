@@ -7,9 +7,13 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
-    <title>Document</title>
+    <title>To Do List</title>
 </head>
 <body>
+    <div id="preloader">
+        <i class="fa-solid fa-spinner"></i>
+    </div>
+
     <header>
         <h1>To Do List</h1>
     </header>
@@ -26,12 +30,13 @@
                 
         
                 <ul>
-                    <li  v-for="(task, index) in tasks">
-                        <span class="li-text">{{task.text}}</span>
+                    <li v-for="(task, index) in tasks">
+                        <span class="li-text" v-if="task.done === false">{{task.text}}</span>
+                        <span class="li-text line-text" v-else="task.done === true">{{task.text}}</span>
 
                         <div class="icons">
                             <span class="completed not-did" v-if="task.done === false" @click="didTask(task, index)"><i class="fa-solid fa-circle-xmark"></i></span>
-                            <span class="completed did" v-else="task.done" @click="didTask(task, index)"> <i class="fa-solid fa-circle-check"></i></span>
+                            <span class="completed did" v-else="task.done === true" @click="didTask(task, index)"> <i class="fa-solid fa-circle-check"></i></span>
                             
                             
                             <span class="delete" @click="deleteTask(index)"><i class="fa-solid fa-trash"></i></span>

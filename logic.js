@@ -1,6 +1,12 @@
 // Descrizione:
 // riprodurre la ToDoList come viste insieme questa mattina,
 // ma con una struttura di array di oggetti e non un array di semplici stringhe
+var loader = document.getElementById('preloader');
+window.addEventListener('load', function loadState(){
+    loader.style.display = "none";
+}
+)
+
 
 const {createApp} = Vue;
 
@@ -40,10 +46,8 @@ createApp({
         didTask (task, index){
             if(task.done === false){
                 task.done = true;
-                document.querySelector("span.li-text").classList.add("line-text");
             } else {
                 task.done = false;
-                document.querySelector("span.li-text").classList.remove("line-text");
             }
         }
     }
