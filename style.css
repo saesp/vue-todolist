@@ -67,7 +67,7 @@ ul li{
 }
 #error{
     font-size: 14px;
-    color: black;
+    color: red;
 }
 ul span{
     /* margin: auto 10px; */

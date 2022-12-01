@@ -28,7 +28,7 @@ createApp({
         
         // far andare il value in newTasks quando user clicca button
         clickButton (){
-            if(this.newTask.length <= 2 || this.newTask.length === " "){
+            if(this.newTask.length <= 1 || this.newTask.length === " "){
                 this.error = true;
             } else{
                 this.tasks.unshift({text: this.newTask, done: false});
