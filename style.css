@@ -24,7 +24,7 @@ body{
 }
 
 h1{
-    font-family: cursive;
+    font-family:Georgia, 'Times New Roman', Times, serif;
     text-align: center;
     color: white;
     margin: 20px auto 40px;
@@ -118,7 +118,7 @@ footer{
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 12px 60px;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 @media screen and (max-width: 600px) {
